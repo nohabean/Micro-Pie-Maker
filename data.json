@@ -1,0 +1,10 @@
+{
+  "metadata": {
+    "title": "Fruits I've Eaten Today"
+  },
+  "data": {
+    "apples": "2",
+    "oranges": "3",
+    "bananas": "5"
+  }
+}
