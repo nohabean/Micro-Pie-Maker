@@ -57,6 +57,7 @@ def main():
             except Exception as e:
                 response = {"status": "error", "message": str(e)}
                 socket.send_json(response)
+
     finally:
         socket.close()
 
