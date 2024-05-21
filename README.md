@@ -12,7 +12,7 @@ The CreatePieMicroservice.py opens a server socket that waits for a message from
 The message should contain the file name of the JSON config file containing the data to be displayed in the pie chart. 
 Using the ZeroMQ communication pipe, this is achieved programatically using the following code:
 
-Initialize Server socket and bind to the desired port to connect with the client on.
+Initialize Server socket and bind to the desired port (set to default) to connect with the client on.
 ```
     context = zmq.Context()
     socket = context.socket(zmq.REP)
@@ -47,6 +47,59 @@ Take the message, parse the JSON file, and create a pie chart by generating the 
 ```
 
 ### Receiving Data
+Once CreatePieMicroservice.py receives the message and creates the pie chart, it sends the image data back to the client. 
+The client can then take the image data and display the pie chart. This is accomplished using the ZeroMQ communication pipe:
+
+Initialize client socket and connect to the server port
+```
+    context = zmq.Context()
+    socket = context.socket(zmq.REQ)
+    socket.connect("tcp://localhost:5555")
+```
+Send the request to the server containing the filename.
+```
+     try:
+        # Specify the name of the JSON file to send in the message to the server
+        filename = 'data.json'
+
+        # Send request to the server containing the filename
+        message = {'filename': filename}
+        socket.send_json(message)
+```
+Receive the image data from the server to display the pie chart.
+```
+        # Receive the image buffer from the server
+        chart_data = socket.recv()
+
+        # Display the pie chart
+        display_pie_chart(chart_data)
+```
+Additional code to open and display the pie charted based on the image data.
+```
+    def display_pie_chart(data):
+        # Display the pie chart image data as a plot
+        image_data = BytesIO(data)
+        plt.figure(figsize=(8, 6))  # Adjust figure size as needed
+        plt.imshow(plt.imread(image_data))
+        plt.axis('off')
+        plt.show()
+```
+
+## Example JSON File and Pie Chart Output
+The data to display is in data.json. This contains a dictionary of key:value pairs and includes metadata containing the title of the pie chart. 
+```
+{
+  "metadata": {
+    "title": "Fruits I've Eaten Today"
+  },
+  "data": {
+    "apples": "2",
+    "oranges": "3",
+    "bananas": "5"
+  }
+}
+```
+Below is the pie chart generated from the data in the JSON file.
 
 
 ## Stopping the Microservice
