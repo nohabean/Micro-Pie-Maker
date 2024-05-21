@@ -1,5 +1,6 @@
 # CS361 Microservice A - Pie Chart Maker
-
+This microservice takes a JSON file containing a dictionary of key: value pairs and generates a pie chart based on the given data.
+The program uses a ZeroMQ communication pipe to request data from the client and receive data back from the server.
 
 
 ## Running the Program
@@ -101,6 +102,7 @@ The data to display is in data.json. This contains a dictionary of key:value pai
 ```
 Below is the pie chart generated from the data in the JSON file.
 
+![Example Pie Chart Output](https://github.com/nohabean/PieChartMicroservice/blob/master/example.png)
 
 ## Stopping the Microservice
 To stop the program from running (and closing the socket connection), close the open pie chart window. This 
