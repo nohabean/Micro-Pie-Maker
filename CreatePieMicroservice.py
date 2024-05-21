@@ -23,6 +23,7 @@ def create_pie_chart(title, data):
     buffer.seek(0)
     return buffer.getvalue()    # return the image data as bytes to be displayed in the client
 
+
 def main():
     # Initialize Server socket and bind to the desired port
     context = zmq.Context()

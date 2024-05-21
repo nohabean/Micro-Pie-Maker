@@ -9,10 +9,10 @@ def main():
     socket = context.socket(zmq.REQ)
     socket.connect("tcp://localhost:5555")
 
-    # Specify the name of the JSON file to send in the message to the server
-    filename = 'data.json'
-
     try:
+        # Specify the name of the JSON file to send in the message to the server
+        filename = 'data.json'
+
         # Send request to the server containing the filename
         message = {'filename': filename}
         socket.send_json(message)
