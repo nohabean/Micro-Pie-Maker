@@ -110,4 +110,4 @@ will close the client and send a "stop" message to the server. This message will
 end its process. To re-open the server socket for new messages, the progrm will need to be ran again.
 
 ## UML Sequence Diagram
-
+![UML Sequence Diagram](https://github.com/nohabean/PieChartMicroservice/blob/master/UML-MicroserviceA.png)
