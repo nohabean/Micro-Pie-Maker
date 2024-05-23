@@ -111,4 +111,4 @@ end its process. To re-open the server socket for new messages, the progrm will 
 
 ## UML Sequence Diagram
 
-![UML Sequence Diagram]()
+![UML Sequence Diagram](https://github.com/nohabean/Micro-Pie-Maker/blob/master/UML-MicroserviceA.png)
