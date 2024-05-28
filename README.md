@@ -1,4 +1,4 @@
-# CS361 Microservice A - Pie Chart Maker
+# Micro Pie Maker
 This microservice takes a JSON file containing a dictionary of key: value pairs and generates a pie chart based on the given data.
 The program uses a ZeroMQ communication pipe to request data from the client and receive data back from the server.
 
