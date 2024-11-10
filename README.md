@@ -2,6 +2,18 @@
 This microservice takes a JSON file containing a dictionary of key: value pairs and generates a pie chart based on the given data.
 The program uses a ZeroMQ communication pipe to request data from the client and receive data back from the server.
 
+### Languages Used
+<ul>
+    <li>Python</li>
+</ul>
+
+### Technologies, Libraries, and IDEs Used
+<ul>
+    <li>ZeroMQ</li>
+    <li>JSON</li>
+    <li>PyCharm</li>
+    <li>Matplotlib</li>
+</ul>
 
 ## Running the Program
 Before running the program, be sure that there is a JSON config file with the data that is to be displayed in the pie chart. 
