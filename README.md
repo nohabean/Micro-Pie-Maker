@@ -19,7 +19,7 @@ The program uses a ZeroMQ communication pipe to request data from the client and
 1. Clone the Git repo and navigate to the directory
 
    ```
-   git clone https://github.com/{username}/Micro-Pie-Maker.git
+   git clone https://github.com/nohabean/Micro-Pie-Maker.git
    cd ./path/to/Micro-Pie-Maker
    ```
 
