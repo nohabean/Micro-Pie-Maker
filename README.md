@@ -15,9 +15,34 @@ The program uses a ZeroMQ communication pipe to request data from the client and
     <li>Matplotlib</li>
 </ul>
 
-## Running the Program
-Before running the program, be sure that there is a JSON config file with the data that is to be displayed in the pie chart. 
-To start the program, run the CreatePieMicroservice.py and TestClient.py. 
+## Setup
+1. Clone the Git repo and navigate to the directory
+
+   ```
+   git clone https://github.com/{username}/Micro-Pie-Maker.git
+   cd ./path/to/Micro-Pie-Maker
+   ```
+
+2. Install Dependancies
+   - Python 3.11+
+
+        ```
+        pip install -r requirements.txt
+        ```
+
+3. Update data.json config file with the desired data.
+
+4. Run the client and the microservice in separete terminals, starting with the client
+
+    - Terminal 1: Run TestClient.py
+       ```
+       python TestClient.py
+       ```
+
+   - Terminal 2: Run CreatePieMicroservice.py
+       ```
+       python CreatePieMicroservice.py
+       ```
 
 ## Requesting and Receiving Data
 ### Requesting Data
